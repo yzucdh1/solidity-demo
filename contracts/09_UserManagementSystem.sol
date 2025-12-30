@@ -20,9 +20,9 @@ contract UserManagementSystem {
     uint256 totalAmount;
     uint256 public constant MAX_USERS = 1000;
 
-    event Register(address userAddr, string name, string email);
-    event UpdateUserInfo(address userAddr, string name, string email);
-    event Deposit(address userAddr, uint256 amount);
+    event Register(address indexed userAddr, string name, string email);
+    event UpdateUserInfo(address indexed userAddr, string name, string email);
+    event Deposit(address indexed userAddr, uint256 amount);
     
     // 注册功能
     function register(string calldata _name, string calldata _email) public {
