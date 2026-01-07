@@ -39,7 +39,7 @@ library AddressSetLib {
     }
 
     function at(Set storage set, uint256 index) internal view returns (address) {
-        require(index > 0 && index < set.values.length, "Invalid index");
+        require(index >= 0 && index < set.values.length, "Invalid index");
         return set.values[index];
     }
 }
