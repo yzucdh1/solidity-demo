@@ -44,20 +44,20 @@ library AdvancedMath {
         if (exponent == 0) {
             return 1;
         }
-        // 初始结果为 1（任何数的 0 次方都是 1）
+        // 初始结果为 1
         uint256 result = 1;
         
         // 迭代拆分指数的二进制位
-        while (exponent > 0) {
+        while (exponent != 0) {
             // 如果指数的最低位是 1（奇数），将当前底数乘到结果中
-            if (exponent % 2 == 1) {
+            if (exponent & 1 == 1) {
                 result = result * base;
             }
             
-            // 底数平方（对应指数左移一位）
+            // 底数平方
             base = base * base;
             // 指数除以 2（右移一位，舍弃最低位）
-            exponent = exponent / 2;
+            exponent = exponent >> 1;
         }
         
         return result;
